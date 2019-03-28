@@ -15,7 +15,7 @@ var windowimg
 var inc=0;
 
 //An array will contain all the objects on the map -canvas-
-var tables = []
+var tables = [];
 
 //A panel lists the names of the created objects
 var master
@@ -34,12 +34,12 @@ function preload() {
 
 //p5 function: called once when the program starts
 function setup() {
-  master = QuickSettings.create(0, 0, "Master")
+  master = QuickSettings.create(0, 0, "Master");
 
   //p5: Creates a canvas element in the document, and sets the dimensions of it in pixels
   var canv=createCanvas(windowWidth-210, windowHeight-50);
   //p5: Set its postion
-  canv.position(210,50)
+  canv.position(210,50);
 
   button = createButton('Rect');
   button.position(canv.x,canv.y-25);
@@ -58,18 +58,18 @@ function setup() {
     inc++
 
     //Our object
-    var tablee = {}
-    tablee["numPlace"]=2
-    tablee["type"]='chair'
-    tablee["positionx"]=70
-    tablee["positiony"]=70
-    tablee["shape"]="table"
-    tablee["title"]="table "+inc
+    var tablee = {};
+    tablee["numPlace"]=2;
+    tablee["type"]='chair';
+    tablee["positionx"]=70;
+    tablee["positiony"]=70;
+    tablee["shape"]="table";
+    tablee["title"]="table "+inc;
     //Add it to -master- array
-    tables.push(tablee)
+    tables.push(tablee);
     //The current object is a table
     shape="table";
-    var l=tables.length
+    var l=tables.length;
     //QuickSettings: panel to configure our object's properties
     var panel=QuickSettings.create(windowWidth-210, 0, tables[l-1]["title"])
     .addRange("numPlace", 0, 10, 2, 1, function(value) { tables[l-1]["numPlace"] = value})
@@ -98,15 +98,15 @@ function setup() {
   button.mousePressed(function() {
 
     inc++
-    var door = {}
-    door["positionx"]=70
-    door["positiony"]=70
-    door["rotation"]=0
-    door["shape"]="door"
-    door["title"]="door "+inc
-    tables.push(door)
+    var door = {};
+    door["positionx"]=70;
+    door["positiony"]=70;
+    door["rotation"]=0;
+    door["shape"]="door";
+    door["title"]="door "+inc;
+    tables.push(door);
     shape="door";
-    var l=tables.length
+    var l=tables.length;
     var panel=QuickSettings.create(windowWidth-210, 0, tables[l-1]["title"])
     .addRange("positionx", 0, windowWidth, 70, 1, function(value) { tables[l-1]["positionx"] = value})
     .addRange("positiony", 0, windowHeight, 70, 1, function(value) { tables[l-1]["positiony"] = value})
@@ -129,16 +129,16 @@ function setup() {
   button.position(canv.x+175,canv.y-25);
   button.mousePressed(function() {
 
-    inc++
-    var door = {}
-    door["positionx"]=90
-    door["positiony"]=70
-    door["rotation"]=0
-    door["shape"]="window"
-    door["title"]="window "+inc
-    tables.push(door)
+    inc++;
+    var door = {};
+    door["positionx"]=90;
+    door["positiony"]=70;
+    door["rotation"]=0;
+    door["shape"]="window";
+    door["title"]="window "+inc;
+    tables.push(door);
     shape="window";
-    var l=tables.length
+    var l=tables.length;
     var panel=QuickSettings.create(windowWidth-210, 0, tables[l-1]["title"])
     .addRange("positionx", 0, windowWidth, 70, 1, function(value) { tables[l-1]["positionx"] = value})
     .addRange("positiony", 0, windowHeight, 70, 1, function(value) { tables[l-1]["positiony"] = value})
@@ -162,13 +162,13 @@ function setup() {
   button.mousePressed(function() {
 
     inc++
-    var tv = {}
-    tv["positionx"]=90
-    tv["positiony"]=70
-    tv["rotation"]=0
-    tv["shape"]="tv"
-    tv["title"]="tv "+inc
-    tables.push(tv)
+    var tv = {};
+    tv["positionx"]=90;
+    tv["positiony"]=70;
+    tv["rotation"]=0;
+    tv["shape"]="tv";
+    tv["title"]="tv "+inc;
+    tables.push(tv);
     shape="tv";
     var l=tables.length
     var panel=QuickSettings.create(windowWidth-210, 0, tables[l-1]["title"])
